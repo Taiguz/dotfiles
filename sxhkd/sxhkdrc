@@ -1,72 +1,70 @@
 # To spawn the terminal
 super + Return
-  gnome-terminal
+ xterm
 
 # make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd & ; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg
+    pkill -USR1 -x sxhkd 
+#; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg
 
-#LOCK
-super + F1
- xscreensaver-command -lock
 
 #CALENDAR
-super + shift + c
- gnome-terminal -- calcurse
+#super + shift + c
+ #gnome-terminal -- calcurse
 
 #POWERMENU
-super + o
- node ~/Documentos/Projetos/system/systempower/main.js &
+#super + o
+ #node ~/Documentos/Projetos/system/systempower/main.js &
 
 #TRANSLATE EN TO PT
-super + e
- gnome-terminal -- trans -s en -t pt-br -I
+#super + e
+ #gnome-terminal -- trans -s en -t pt-br -I
 
 #TRANSLATE PT TO EN
-super + t
- gnome-terminal -- trans -s pt-br -t en -I
+#super + t
+ #gnome-terminal -- trans -s pt-br -t en -I
 
 #R
-super + shift + r
- gnome-terminal -- R
+#super + shift + r
+ #gnome-terminal -- R
 
 #NEWSBOAT
 super + shift + f
- gnome-terminal -- newsboat
+ xterm -- newsboat
 
 #YOUTUBE
-super + shift + y
- gnome-terminal -- youtube-viewer
+#super + shift + y
+ #gnome-terminal -- youtube-viewer
 
 #ALSA
-super + shift + a
- gnome-terminal -- alsamixer
+#super + shift + a
+ #gnome-terminal -- alsamixer
 
 #NETWORK
-super + n
- node ~/Documentos/Projetos/system/wifi-manager/wifi-manager.js
+#super + n
+ #node ~/Documentos/Projetos/system/wifi-manager/wifi-manager.js
 
 # for dmenu
-super + p
- rofi -show run -show-icons -display-run "Search" -lines 5 -location 1
+#super + p
+ #rofi -show run -show-icons -display-run "Search" -lines 5 -location 1
 
 # quit/restart bspwm
 super + ctrl + {q,r}
  {bspc quit, notify-send 'Shortcut Feedback' 'bspc reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg; bspc wm -r }
 
 #HIDE POLYBAR 
-super + b
- ~/.config/sxhkd/hide-polybar.sh
+#super + b
+ #~/.config/sxhkd/hide-polybar.sh
 
 #APP LAUNCH
 
 #NAUTILUS
-super + shift + n
- notify-send 'Shortcut Feedback' 'launching ranger' --icon=/usr/share/icons/Yaru/scalable/apps/nautilus-symbolic.svg ; gnome-terminal -- ranger
+#super + shift + n
+ #notify-send 'Shortcut Feedback' 'launching ranger' --icon=/usr/share/icons/Yaru/scalable/apps/nautilus-symbolic.svg ; gnome-terminal -- ranger
 
 #SPOTIFY
-super + shift + s
- notify-send 'Shortcut Feedback' 'launching spotify' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/spotify.svg ; spotify 
+#super + shift + s
+ #notify-send 'Shortcut Feedback' 'launching spotify' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/spotify.svg ; spotify 
 
 
 #FIREFOX
@@ -74,34 +72,34 @@ super + shift + s
 #notify-send 'Shorcut Feedback' 'launching firefox' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/firefox.svg ; apulse firefox
 
 #CHROME
-super + shift + g
- notify-send 'Shorcut Feedback' 'launching chrome' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/chrome.svg ; google-chrome
+#super + shift + g
+ #notify-send 'Shorcut Feedback' 'launching chrome' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/chrome.svg ; google-chrome
 
 #MOUSE SHORTCUTS
 #button1 left, button2 middle, button3 right, button4 scroll-up, button5 scroll-down, button8 back, button9 forward
 
-super + button4
- pactl set-sink-volume @DEFAULT_SINK@ +10% ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
-
-super + button5
- pactl set-sink-volume @DEFAULT_SINK@ -10% ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
-
-super + {button8,button9}
- bspc desktop --focus {prev,next}
+#super + button4
+# pactl set-sink-volume @DEFAULT_SINK@ +10% ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + button5
+# pactl set-sink-volume @DEFAULT_SINK@ -10% ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + {button8,button9}
+# bspc desktop --focus {prev,next}
 #super + button9
 
-#ALSA
-super + equal
- amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
-
-super + minus
- amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
-
-super + KP_Add
- amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
-
-super + KP_Subtract
- amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+##ALSA
+#super + equal
+# amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + minus
+# amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + KP_Add
+# amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + KP_Subtract
+# amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
 
 #BSPWM SHORTCUTS
 super + w
@@ -120,10 +118,6 @@ super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,
  bspc node -d $WORKSPACE; \ 
  notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/desktop.svg
 
-super + shift + l
- bspc node -d Aux; \
- notify-send "Shorcut Feedback" "Moved window to second monitor" --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/desktop.svg
-
 super + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
  bspc desktop --focus $WORKSPACE
@@ -141,5 +135,5 @@ super + ctrl + {h,l}
 super + ctrl + {k,j}
  bspc node --resize top {-10,10} 0
 
-Print
- deepin-screenshot &
+#Print
+# deepin-screenshot &

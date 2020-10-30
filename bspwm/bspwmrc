@@ -1,6 +1,4 @@
 #! /bin/bash
-
-sxhkd &
 #Upscaling to 1080p
 #xrandr --output eDP --panning 1920x1080 --scale 1.406x1.406 
 #xrandr --output LVDS1 --scale 1x1
@@ -11,17 +9,9 @@ sxhkd &
 # else
 #  bspc monitor eDP -d Home Dev Support Terminal Music Chat Sys Info Random
 # fi
-m=($(xrandr -q | grep " connected" | cut -d ' ' -f1))
-if [[ "${#m[@]}" == "2" ]];then
- bspc monitor HDMI-A-0 -d Home Dev Support Terminal Music Chat Sys Info Random
- bspc monitor eDP -d Aux
-else
- bspc monitor eDP -d Home Dev Support Terminal Music Chat Sys Info Random
-fi
+ bspc monitor VGA-0 -d Home Dev Support Terminal Music Chat Sys Info Random
+#. "${HOME}/.cache/wal/colors.sh"
 
-. "${HOME}/.cache/wal/colors.sh"
-
-bspc config external_rules_command "${HOME}/.config/bspwm/scripts/rules.sh"
 
 bspc config border_width         1
 bspc config window_gap          12
@@ -33,58 +23,43 @@ bspc config bottom_monocle_padding 0
 bspc config gapless_monocle      true
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
-bspc rule -a Surf state=tiled follow=on
-#bspc rule -a Gimp desktop='^8' state=tiled follow=on
-#bspc rule -a spotify desktop='^8' state=tiled follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
 bspc config focus_follows_pointer true
 xsetroot -cursor_name left_ptr
-pkill picom
-while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
-picom &
+#pkill picom
+#while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
+#picom &
 
 #Lauching polywal
-wal -R
+#wal -R
 
-wallpaper="$(cat ~/.defaultbg)"
-feh --bg-fill $wallpaper
+#wallpaper="$(cat ~/.defaultbg)"
+#feh --bg-fill $wallpaper
 
 ## LAUNCH POLYBAR
 
-pkill polybar
+#pkill polybar
 
-~/.config/polybar/launch.sh
+#~/.config/polybar/launch.sh
 
 #NOTIFICATIONS 
-~/.config/dunst/reload-dunst.sh
-pkill dunst
-while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
-dunst &
+#~/.config/dunst/reload-dunst.sh
+#pkill dunst
+#while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
+#dunst &
 
 #REMAP ESCAPE 
 # xmodmap ~/.config/capstoescxmod
 
-#SCREENSAVER
-xscreensaver -no-splash &
 
-## CONFIGURAR TOUCHPAD
-node /home/tai/Documentos/Projetos/system/configTouchpad/main.js
-
-node /home/tai/Documentos/Projetos/system/handleMonitor/main.js &
 
 #BLUE LIGHT REDSHIFT
-pkill redshift
-while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
-redshift &
+#pkill redshift
+#while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
+#redshift &
 
 #Polybar should be visible
-echo "1" > ~/.config/sxhkd/polybar-status
+#echo "1" > ~/.config/sxhkd/polybar-status
 
 #setup startpage server
-node ~/Documentos/Projetos/system/startpage/main.js
+#node ~/Documentos/Projetos/system/startpage/main.js
 
-#mounting HD partition
-mount /dev/sda5 /mnt/hd
