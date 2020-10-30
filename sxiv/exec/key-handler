@@ -1,0 +1,12 @@
+#!/bin/bash
+while read file
+do
+        case "$1" in
+        "C-d")
+                mv "$file" ~/.trash ;;
+        "C-c")
+                echo -n "$file" | xclip -selection clipboard ; notify-send "SXIV Feedback" "file path copied to clipboard" --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/copy.svg;;
+        "C-w")
+               feh --bg-fill "$file" ; notify-send "SXIV Feedback" "wallpaper changed"  --icon=/usr/share/fonts/op entype/fontawesome/svgs/solid/image.svg; echo -n "$file" > ~/.defaultbg;;
+        esac
+done
