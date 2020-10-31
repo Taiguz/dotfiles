@@ -1,12 +1,16 @@
 # To spawn the terminal
 super + Return
- xterm
+ termite
 
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd 
 #; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg
 
+super + shift + t
+ termite --directory=`xcwd`
+super + shift + v
+ termite --exec=vim --directory=`xcwd`
 
 #CALENDAR
 #super + shift + c
@@ -44,6 +48,8 @@ super + shift + f
 #super + n
  #node ~/Documentos/Projetos/system/wifi-manager/wifi-manager.js
 
+super + p
+ dmenu_run
 # for dmenu
 #super + p
  #rofi -show run -show-icons -display-run "Search" -lines 5 -location 1
