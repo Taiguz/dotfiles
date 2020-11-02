@@ -1,17 +1,20 @@
 # To spawn the terminal
 super + Return
- termite
+  notify-send 'Shortcut Feedback' 'Lauching terminal' --icon=~/.config/dunst/icons/terminal.png ; termite
 
 # make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd 
-#; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg
+    pkill -USR1 -x sxhkd ; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=~/.config/dunst/icons/reload.png
 
+super + shift + s
+ find `xcwd` | grep .png | sxiv -ti
 super + shift + t
- termite --directory=`xcwd`
+ notify-send 'Shortcut Feedback' 'Lauching terminal from directory' --icon=~/.config/dunst/icons/terminal.png ; termite --directory=`xcwd`
 super + shift + v
- termite --exec=vim --directory=`xcwd`
+  notify-send 'Shortcut Feedback' 'Lauching vim from directory' --icon=~/.config/dunst/icons/text-editor.png ; termite --exec=vim --directory=`xcwd`
 
+super + shift + f
+ notify-send 'Shortcut Feedback' 'Lauching firefox' --icon=~/.config/dunst/icons/web-browser.png ; firefox
 #CALENDAR
 #super + shift + c
  #gnome-terminal -- calcurse
@@ -34,7 +37,7 @@ super + shift + v
 
 #NEWSBOAT
 super + shift + f
- xterm -- newsboat
+  notify-send 'Shortcut Feedback' 'Lauching newsboat' --icon=~/.config/dunst/icons/rss-reader.png ; termite -- newsboat
 
 #YOUTUBE
 #super + shift + y
@@ -63,6 +66,8 @@ super + ctrl + {q,r}
  #~/.config/sxhkd/hide-polybar.sh
 
 #APP LAUNCH
+super + shift + n
+  notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; termite -- ranger
 
 #NAUTILUS
 #super + shift + n
@@ -117,12 +122,12 @@ super + {k,j,h,l}
 super + shift + {1-9}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
  bspc node -d $WORKSPACE; \ 
- notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/desktop.svg
+ notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
 super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
  bspc node -d $WORKSPACE; \ 
- notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/desktop.svg
+ notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
 super + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
