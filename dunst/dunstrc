@@ -28,7 +28,7 @@ horizontal_padding=20
 separator_color=auto
 startup_notification=false
 verbosity=mesg
-corner_radius=8
+corner_radius=0
 dmenu=/usr/bin/dmenu -p dunst:
 browser=google-chrome
 
@@ -46,17 +46,17 @@ history=ctrl+grave
 context=ctrl+shift+period
 
 [urgency_low]
-background="#f92672"
+background="#dc2566"
 foreground="#272822"
 timeout=3
 
 [urgency_normal]
-background="#f92672"
+background="#dc2566"
 foreground="#272822"
 timeout=4
 
 [urgency_critical]
-background="#f92672"
+background="#dc2566"
 foreground="#272822"
 timeout=5
 summary="*"

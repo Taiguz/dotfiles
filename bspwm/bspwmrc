@@ -3,10 +3,13 @@ sxhkd &
 
 setxkbmap -layout br
 
- bspc monitor VGA-0 -d Home Dev Support Terminal Music Chat Sys Info Random
+m=($(xrandr -q | grep " connected" | cut -d ' ' -f1))
+if [[ "${#m[@]}" == "2" ]];then
+				~/scripts/move-to-hdmi
+else
+				~/scripts/move-to-edp
+fi
 . "${HOME}/.cache/wal/colors.sh"
-
-
 bspc config border_width         1
 bspc config window_gap          12
 bspc config focused_border_color "$color15"
@@ -28,17 +31,17 @@ picom &
 wal -R
 feh --bg-fill ~/papers/`cat ~/.background-image`
 
+#CONFIGURAR TOUCHPAD
+~/scripts/configure_touchpad
+
+#WATCH MONITOR CHANGE
+node ~/scripts/handle-monitors.js &
 ## LAUNCH POLYBAR
 
-#pkill polybar
-
-#~/.config/polybar/launch.sh
+~/.config/polybar/launch.sh &
 
 #NOTIFICATIONS 
 #~/.config/dunst/reload-dunst.sh
-#pkill dunst
-#while pgrep -u $UID -x dunst >/dev/null; do sleep 1; done
-#dunst &
 
 
 #BLUE LIGHT REDSHIFT

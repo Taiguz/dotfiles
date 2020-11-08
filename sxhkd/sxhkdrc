@@ -4,7 +4,10 @@ super + Return
 
 # make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd ; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=~/.config/dunst/icons/reload.png
+ pkill -USR1 -x sxhkd ; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=~/.config/dunst/icons/reload.png
+
+super + F1
+ ~/.config/polybar/launch.sh
 
 super + shift + s
  find `xcwd` | grep .png | sxiv -ti
@@ -61,13 +64,21 @@ super + p
 super + ctrl + {q,r}
  {bspc quit, notify-send 'Shortcut Feedback' 'bspc reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg; bspc wm -r }
 
-#HIDE POLYBAR 
-#super + b
- #~/.config/sxhkd/hide-polybar.sh
-
 #APP LAUNCH
 super + shift + n
   notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; termite -- ranger
+
+super + equal
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+
+super + minus
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+
+super + KP_Add
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+
+super + KP_Subtract
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
 
 #NAUTILUS
 #super + shift + n
@@ -123,6 +134,10 @@ super + shift + {1-9}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
  bspc node -d $WORKSPACE; \ 
  notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
+
+super + shift + l 
+ bspc node -m eDP; \ 
+ notify-send "Shorcut Feedback" "Moved window to second monitor" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
 super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 

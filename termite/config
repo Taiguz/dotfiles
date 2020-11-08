@@ -6,7 +6,7 @@ bold_is_bright = true
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font = Monospace 22
+font = Monospace 16
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -39,40 +39,38 @@ browser = xdg-open
 
 # "off", "left" or "right"
 #scrollbar = off
-
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
-
-#foreground = #dcdccc
+#background = ${xrdb:color0:#222}
+#foreground = ${Foreground.Color}
 #foreground_bold = #ffffff
-#background = #3f3f3f
-
+#background = ${Background.Color}
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.8)
+background = rgba(35, 35, 35, 0.9)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = Color0Intense.Color
 
-# Colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+#Colors from color0 to color254 can be set
+#color0 = ${xrdb:color1:#222}
+#color1 = Color1.Color
+#color2 = Color2.Color
+#color3 = Color3.Color
+#color4 = Color4.Color
+#color5 = Color5.Color
+#color6 = Color6.Color
+#color7 = Color7.Color
+#color8 = Color8.Color
+#color9 = Color9.Color
+#color10 = Color10.Color
+#color11 = Color11.Color
+#color12 = Color12.Color
+#color13 = Color13.Color
+#color14 = Color14.Color
+#color15 = Color15.Color
 
 [hints]
 #font = Monospace 12
