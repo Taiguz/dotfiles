@@ -23,16 +23,19 @@ super + shift + f
  #gnome-terminal -- calcurse
 
 #POWERMENU
-#super + o
- #node ~/Documentos/Projetos/system/systempower/main.js &
-
+super + o
+ ~/scripts/power.sh 
 #TRANSLATE EN TO PT
-#super + e
- #gnome-terminal -- trans -s en -t pt-br -I
+super + e
+ termite --exec="trans -s en -t pt-br -I"
 
 #TRANSLATE PT TO EN
-#super + t
- #gnome-terminal -- trans -s pt-br -t en -I
+super + t
+ termite --exec="trans -s pt-br -t en -I"
+
+#Lock Screen
+super + ctrl + l
+ slock -m "Screen Locked at $(date)."
 
 #R
 #super + shift + r
@@ -55,7 +58,7 @@ super + shift + f
  #node ~/Documentos/Projetos/system/wifi-manager/wifi-manager.js
 
 super + p
- dmenu_run
+ rofi -show drun -lines 5 -show-icons -terminal termite
 # for dmenu
 #super + p
  #rofi -show run -show-icons -display-run "Search" -lines 5 -location 1
@@ -69,16 +72,16 @@ super + shift + n
   notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; termite -- ranger
 
 super + equal
- pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume +10%" --icon=~/.config/dunst/icons/volume.png 
 
 super + minus
- pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to -10%" --icon=~/.config/dunst/icons/volume.png 
 
 super + KP_Add
- pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to +10%" --icon=~/.config/dunst/icons/volume.png 
 
 super + KP_Subtract
- pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to $(pactl list sinks | grep Volume: | head -n 1 | cut -d/ -f2)" --icon=~/.config/dunst/icons/volume.png 
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to -10%" --icon=~/.config/dunst/icons/volume.png 
 
 #NAUTILUS
 #super + shift + n
@@ -161,5 +164,5 @@ super + ctrl + {h,l}
 super + ctrl + {k,j}
  bspc node --resize top {-10,10} 0
 
-#Print
-# deepin-screenshot &
+Print
+ deepin-screenshot 

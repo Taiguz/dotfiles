@@ -32,26 +32,24 @@ wal -R
 feh --bg-fill ~/papers/`cat ~/.background-image`
 
 #CONFIGURAR TOUCHPAD
-~/scripts/configure_touchpad
+~/scripts/configure_touchpad.sh
+
+#handle headphone mic
+~/scripts/handle-mic.sh &
+
+#update clock 
+~/scripts/sincro-clock.sh &
 
 #WATCH MONITOR CHANGE
 node ~/scripts/handle-monitors.js &
 ## LAUNCH POLYBAR
-
 ~/.config/polybar/launch.sh &
 
-#NOTIFICATIONS 
-#~/.config/dunst/reload-dunst.sh
-
-
 #BLUE LIGHT REDSHIFT
-#pkill redshift
-#while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
-#redshift &
-
-#Polybar should be visible
-#echo "1" > ~/.config/sxhkd/polybar-status
+pkill redshift
+while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
+redshift &
 
 #setup startpage server
-#node ~/Documentos/Projetos/system/startpage/main.js
+node ~/projetos/tqs/main.js
 
