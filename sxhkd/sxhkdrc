@@ -1,0 +1,170 @@
+# To spawn the terminal
+super + Return
+  notify-send 'Shortcut Feedback' 'Lauching terminal' --icon=~/.config/dunst/icons/terminal.png ; termite
+
+# make sxhkd reload its configuration files:
+super + Escape
+ pkill -USR1 -x sxhkd ; notify-send 'Shorcut Feedback' 'sxhkd reloaded' --icon=~/.config/dunst/icons/reload.png
+
+super + F1
+ ~/.config/polybar/launch.sh
+
+super + shift + s
+ find `xcwd` | grep .png | sxiv -ti
+super + shift + t
+ notify-send 'Shortcut Feedback' 'Lauching terminal from directory' --icon=~/.config/dunst/icons/terminal.png ; termite --directory=`xcwd`
+super + shift + v
+  notify-send 'Shortcut Feedback' 'Lauching vim from directory' --icon=~/.config/dunst/icons/text-editor.png ; termite --exec=vim --directory=`xcwd`
+
+super + shift + f
+ notify-send 'Shortcut Feedback' 'Lauching firefox' --icon=~/.config/dunst/icons/web-browser.png ; firefox
+#CALENDAR
+#super + shift + c
+ #gnome-terminal -- calcurse
+
+#POWERMENU
+super + o
+ ~/scripts/power.sh 
+#TRANSLATE EN TO PT
+super + e
+ termite --exec="trans -s en -t pt-br -I"
+
+#TRANSLATE PT TO EN
+super + t
+ termite --exec="trans -s pt-br -t en -I"
+
+#Lock Screen
+super + ctrl + s
+ slock -m "Screen Locked at $(date)."
+
+#R
+#super + shift + r
+ #gnome-terminal -- R
+
+#NEWSBOAT
+super + shift + f
+  notify-send 'Shortcut Feedback' 'Lauching newsboat' --icon=~/.config/dunst/icons/rss-reader.png ; termite -- newsboat
+
+#YOUTUBE
+#super + shift + y
+ #gnome-terminal -- youtube-viewer
+
+#ALSA
+#super + shift + a
+ #gnome-terminal -- alsamixer
+
+#NETWORK
+#super + n
+ #node ~/Documentos/Projetos/system/wifi-manager/wifi-manager.js
+
+super + p
+ rofi -show drun -lines 5 -show-icons -terminal termite
+# for dmenu
+#super + p
+ #rofi -show run -show-icons -display-run "Search" -lines 5 -location 1
+
+# quit/restart bspwm
+super + ctrl + {q,r}
+ {bspc quit, notify-send 'Shortcut Feedback' 'bspc reloaded' --icon=/usr/share/icons/Yaru/scalable/actions/system-reboot-symbolic.svg; bspc wm -r }
+
+#APP LAUNCH
+super + shift + n
+  notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; termite -- ranger
+
+super + equal
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume +10%" --icon=~/.config/dunst/icons/volume.png 
+
+super + minus
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to -10%" --icon=~/.config/dunst/icons/volume.png 
+
+super + KP_Add
+ pactl set-sink-volume 1 +10% ; notify-send 'Shortcut Feedback' "Volume set to +10%" --icon=~/.config/dunst/icons/volume.png 
+
+super + KP_Subtract
+ pactl set-sink-volume 1 -10% ; notify-send 'Shortcut Feedback' "Volume set to -10%" --icon=~/.config/dunst/icons/volume.png 
+
+#NAUTILUS
+#super + shift + n
+ #notify-send 'Shortcut Feedback' 'launching ranger' --icon=/usr/share/icons/Yaru/scalable/apps/nautilus-symbolic.svg ; gnome-terminal -- ranger
+
+#SPOTIFY
+#super + shift + s
+ #notify-send 'Shortcut Feedback' 'launching spotify' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/spotify.svg ; spotify 
+
+
+#FIREFOX
+#super + shift + f
+#notify-send 'Shorcut Feedback' 'launching firefox' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/firefox.svg ; apulse firefox
+
+#CHROME
+#super + shift + g
+ #notify-send 'Shorcut Feedback' 'launching chrome' --icon=/usr/share/fonts/opentype/fontawesome/svgs/brands/chrome.svg ; google-chrome
+
+#MOUSE SHORTCUTS
+#button1 left, button2 middle, button3 right, button4 scroll-up, button5 scroll-down, button8 back, button9 forward
+
+#super + button4
+# pactl set-sink-volume @DEFAULT_SINK@ +10% ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + button5
+# pactl set-sink-volume @DEFAULT_SINK@ -10% ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + {button8,button9}
+# bspc desktop --focus {prev,next}
+#super + button9
+
+##ALSA
+#super + equal
+# amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + minus
+# amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + KP_Add
+# amixer set Master 10%+ ; notify-send 'Shorcut Feedback' 'increasing volume + 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+#
+#super + KP_Subtract
+# amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
+
+#BSPWM SHORTCUTS
+super + f
+ ~/scripts/toogle-tiled-fullscreen.sh
+super + w
+ bspc node -c
+
+super + {k,j,h,l}
+ bspc node -f {north,south,west,east}
+
+super + shift + {1-9}
+ WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
+ bspc node -d $WORKSPACE; \ 
+ notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
+
+super + shift + l 
+ bspc node -m eDP; \ 
+ notify-send "Shorcut Feedback" "Moved window to second monitor" --icon=~/.config/dunst/icons/moved-to-desktop.png
+
+super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
+ WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
+ bspc node -d $WORKSPACE; \ 
+ notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
+
+super + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
+ WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
+ bspc desktop --focus $WORKSPACE
+
+super + {1,2,3,4,5,6,7,8,9}
+ WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
+ bspc desktop --focus $WORKSPACE
+
+super + g
+ bspc node --swap biggest.local
+
+super + ctrl + {h,l}
+ bspc node --resize left {-10,10} 0
+
+super + ctrl + {k,j}
+ bspc node --resize top {-10,10} 0
+
+Print
+ deepin-screenshot 

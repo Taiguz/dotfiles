@@ -1,0 +1,133 @@
+@import url("file:///home/tai/.cache/wal/colors.css");
+html,body{
+ scrollbar-color: var(--background) var(--color1) !important;
+}
+:root:-moz-lwtheme-brighttext, toolbar[brighttext] {
+	--toolbarbutton-hover-background: var(--color4,hsla(0,0%,70%,.6));
+	--toolbarbutton-active-background: var(--color4, hsla(0,0%,70%,.6));
+}
+#tabs-newtab-button {
+	display: none !important;
+}
+#navigator-toolbox {
+    --tabs-border-color: transparent;
+		border-bottom: none !important;
+}
+#tabbrowser-arrowscrollbox{
+	background-color: var(--background) !important;
+}
+#urlbar{
+	color: var(--foreground) !important;
+}
+#toolbarbutton{
+	fill: var(--color1) !important;
+}
+#tracking-protection-icon-container{
+	border-inline: transparent !important;
+}
+#tabs-newtab-button{
+	fill: var(--color1) !important;
+}
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: none !important;
+}
+.tabbrowser-tab[visuallyselected="true"] .tab-background{
+	background-color: var(--background) !important;
+
+}
+.tab-background:not[visuallyselected] {
+	opacity: 0.5 !important;
+}
+
+.tab-label-container{
+	display: flex;
+	justify-content: center;
+}
+
+.tab-content {
+	justify-content: center;
+	align-items: center;
+	margin-top: -1px;
+	min-width: 100% !important;
+	padding: 0 10px !important;
+	overflow: hidden;
+}
+
+
+/* Tab close button */
+.tab-close-button {
+	display: none;
+}
+
+.tabbrowser-tab::after, #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[visuallyselected]::before {
+    display: none !important;
+}
+
+.tab-close-button{
+	fill: var(--color1) !important;
+}
+#pageActionSeparator{
+	display: none;
+}
+#navigator-toolbox {
+    --tabs-border-color: transparent !important;
+}
+#identity-box{
+	fill: var(--color1) !important;
+}
+#PanelUI-menu-button{
+	fill: var(--color1) !important;
+}
+#PanelUI-button{
+	border-inline-start: 0px !important;
+}
+#scrollbox{
+	background-color: var(--background) !important;
+}
+.tab-background{
+	background-image: unset !important;
+}
+.tabbrowser-tab:not([pinned]){
+/*	max-width: 100% !important;*/
+	background-color: var(--background) !important;
+}
+.tabbrowser-tab{
+	background-color: transparent;
+	color: var(--foreground) !important;
+}
+#tabbrowser-tabs{
+	--tab-line-color: var(--color1) !important;
+}
+#star-button{ 
+	display:none;
+}
+#pageActionButton{
+	display:none;
+}
+#pocket-button{
+	display:none;
+}
+#nav-bar{
+	background-color: var(--background) !important;
+	background-image: none !important;
+}
+#urlbar-background{
+	background-color: var(--background) !important;
+	border: 0px !important;
+}
+#back-button{
+	display:none;
+}
+#forward-button{
+	display:none;
+}
+#page-action-buttons{
+	color: var(--color1);
+}
+#identity-icon{
+	color: var(--color1);
+}
+#tracking-protection-icon{
+	color: var(--color1);
+}
+

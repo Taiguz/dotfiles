@@ -1,0 +1,11 @@
+map <C-s> :w<ENTER>
+map \p i(<Esc>ea)<Esc>
+map \c i{<Esc>ea}<Esc>
+map <C-q> :q<ENTER>
+map <C-b> :NERDTreeToggle<ENTER>
+map <C-S-r> :so $MYVIMRC
+map <C-t> :!gnome-terminal<ENTER>
+map <A-1> :!tabn1<ENTER>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+map <C-l> :!~/compila-latex.sh $(echo %)<ENTER>

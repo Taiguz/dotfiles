@@ -1,0 +1,4 @@
+@import "~/.cache/wal/colors-rofi-dark"
+* {
+ font: "FiraMono-Regular 18";
+}

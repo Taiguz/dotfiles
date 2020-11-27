@@ -1,0 +1,14 @@
+#!/bin/bash
+while read file
+do
+        case "$1" in
+        "C-d")
+                mv "$file" ~/.trash ;;
+        "C-c")
+                echo -n "$file" | xclip -selection clipboard ; notify-send "SXIV Feedback" "file path copied to clipboard" --icon=~/.config/dunst/icons/copy.png;;
+        "C-w")
+               feh --bg-fill "$file" ; notify-send "SXIV Feedback" "wallpaper changed"  --icon=~/.config/dunst/icons/wallpaper-change.png; echo -n "$file" > ~/.background-image;;
+       "C-n")
+               notify-send "SXIV Feedback" "Copying file to dunst icons" --icon=~/.config/dunst/icons/moved-to-dunst-icons.png ; cp "$file" ~/.config/dunst/icons/;;
+        esac
+done

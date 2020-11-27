@@ -1,0 +1,86 @@
+[options]
+allow_bold = true
+#audible_bell = false
+bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+#clickable_url = true
+#dynamic_title = true
+font = Monospace 16
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+browser = xdg-open
+
+# "system", "on" or "off"
+#cursor_blink = system
+
+# "block", "underline" or "ibeam"
+#cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+[colors]
+# If both of these are unset, cursor falls back to the foreground color,
+# and cursor_foreground falls back to the background color.
+#cursor = #dcdccc
+#cursor_foreground = #dcdccc
+#background = ${xrdb:color0:#222}
+#foreground = ${Foreground.Color}
+#foreground_bold = #ffffff
+#background = ${Background.Color}
+# 20% background transparency (requires a compositor)
+background = rgba(35, 35, 35, 0.9)
+
+# If unset, will reverse foreground and background
+#highlight = Color0Intense.Color
+
+#Colors from color0 to color254 can be set
+#color0 = ${xrdb:color1:#222}
+#color1 = Color1.Color
+#color2 = Color2.Color
+#color3 = Color3.Color
+#color4 = Color4.Color
+#color5 = Color5.Color
+#color6 = Color6.Color
+#color7 = Color7.Color
+#color8 = Color8.Color
+#color9 = Color9.Color
+#color10 = Color10.Color
+#color11 = Color11.Color
+#color12 = Color12.Color
+#color13 = Color13.Color
+#color14 = Color14.Color
+#color15 = Color15.Color
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 30
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 12.0
+
+# vim: ft=dosini cms=#%s
