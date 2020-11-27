@@ -7,4 +7,4 @@ Install packages from the arch repositories
 And then from the AUR  
 `yay -S - < aur-packages-list`
 ## Clone the config files
-`cd && mkdir .config && cd .config && git clone https://github.com/Taiguz/dotfiles.git`
+`cd && mkdir .config && cd .config && git clone https://github.com/Taiguz/dotfiles.git .`
