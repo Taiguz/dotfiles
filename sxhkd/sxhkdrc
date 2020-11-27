@@ -34,7 +34,7 @@ super + t
  termite --exec="trans -s pt-br -t en -I"
 
 #Lock Screen
-super + ctrl + l
+super + ctrl + s
  slock -m "Screen Locked at $(date)."
 
 #R
@@ -127,6 +127,8 @@ super + KP_Subtract
 # amixer set Master 10%- ; notify-send 'Shorcut Feedback' 'decreasing volume - 10%' --icon=/usr/share/fonts/opentype/fontawesome/svgs/solid/volume-up.svg
 
 #BSPWM SHORTCUTS
+super + f
+ ~/scripts/toogle-tiled-fullscreen.sh
 super + w
  bspc node -c
 

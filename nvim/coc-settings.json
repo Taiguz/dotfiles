@@ -1,15 +1,28 @@
 {
     "suggest.echodocSupport": true,
     "suggest.maxCompleteItemCount": 20,
-    "prettier.eslintIntegration": true,
+    "prettier.eslintIntegration": false,
     "prettier.tslintIntegration": true,
     "prettier.semi": false,
     "prettier.printWidth": 300,
     "prettier.bracketSpacing": true,
     "prettier.arrowParens": "avoid",
     "prettier.tabWidth": 4,
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
-    "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "javascriptreact"
+    ],
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "eslint.nodePath": "/lib/node_modules",
+    "eslint.packageManager": "npm",
     "diagnostic.errorSign": "x",
     "diagnostic.warningSign": "i",
     "diagnostic.infoSign": "-"

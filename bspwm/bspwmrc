@@ -5,9 +5,9 @@ setxkbmap -layout br
 
 m=($(xrandr -q | grep " connected" | cut -d ' ' -f1))
 if [[ "${#m[@]}" == "2" ]];then
-				~/scripts/move-to-hdmi
+	~/scripts/move-to-hdmi
 else
-				~/scripts/move-to-edp
+	~/scripts/move-to-edp
 fi
 . "${HOME}/.cache/wal/colors.sh"
 bspc config border_width         1
@@ -23,15 +23,16 @@ bspc config remove_unplugged_monitors true
 bspc config focus_follows_pointer true
 xsetroot -cursor_name left_ptr
 
+#launching xorg compositor
 pkill picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom &
 
-#Lauching polywal
+#lauching polywal
 wal -R
 feh --bg-fill ~/papers/`cat ~/.background-image`
 
-#CONFIGURAR TOUCHPAD
+#configure touchpad
 ~/scripts/configure_touchpad.sh
 
 #handle headphone mic
@@ -40,12 +41,13 @@ feh --bg-fill ~/papers/`cat ~/.background-image`
 #update clock 
 ~/scripts/sincro-clock.sh &
 
-#WATCH MONITOR CHANGE
+#watch monitors
 node ~/scripts/handle-monitors.js &
-## LAUNCH POLYBAR
+
+#start polybar
 ~/.config/polybar/launch.sh &
 
-#BLUE LIGHT REDSHIFT
+#launch redshift
 pkill redshift
 while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
 redshift &
