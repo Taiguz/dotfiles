@@ -7,7 +7,7 @@
     "prettier.printWidth": 300,
     "prettier.bracketSpacing": true,
     "prettier.arrowParens": "avoid",
-    "prettier.tabWidth": 4,
+    "prettier.tabWidth": 2,
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
         "typescript",

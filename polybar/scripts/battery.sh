@@ -7,6 +7,17 @@ percentage=`echo ${status_battery[1]} | cut -d% -f1`
 color_discharging=`~/.config/polybar/scripts/getXcolor.sh color1`
 color_charging=`~/.config/polybar/scripts/getXcolor.sh color2`
 color_underline=`~/.config/polybar/scripts/getXcolor.sh color4`
+if [ "$percentage" -eq 20 ]
+then
+	notify-send 'Battery Level' 'Battery Level At 20%!' --urgency=critical --expire-time=100000 --icon=~/.config/dunst/icons/battery-low.png
+elif [ "$percentage" -eq 10 ]
+then
+	notify-send 'Battery Level' 'Battery Level At 10%!\nShutting down soon!' --urgency=critical --expire-time=100000 --icon=~/.config/dunst/icons/battery-low.png
+elif [ "$percentage" -le 5 ]
+then
+	notify-send 'Battery Level' 'Battery Level At 5%!\nShutting down in 1 minute!' --urgency=critical --expire-time=100000 --icon=~/.config/dunst/icons/battery-low.png
+	shutdown +1
+fi
 
 if [ "${status_battery[0]}" = "Full" ]
 then

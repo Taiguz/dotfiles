@@ -21,10 +21,13 @@ autocmd FileType javascript setlocal foldmethod=expr
 autocmd FileType javascript setlocal foldexpr=JSFolds()
 autocmd FileType html setlocal foldmethod=indent
 autocmd FileType css setlocal foldmethod=indent
+autocmd FileType c setlocal foldmethod=indent
+autocmd FileType sh setlocal tabstop=1
 set foldtext=TaiguzFoldText()
 set fillchars=fold:\ 
 set foldcolumn=2
 let g:loaded_matchparen=1
+set clipboard+=unnamedplus 
 packadd vimball
 source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/maps.vim
@@ -35,14 +38,15 @@ let g:javascript_plugin_jsdoc = 1
 if !exists('g:airline_symbols')
  let g:airline_symbols = {}
 endif
-
+let g:airline_left_sep = ''
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' '
-let g:airline_symbols.maxlinenr = ' '
+let g:airline_symbols.columnnr = ' '
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = ' '
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.readonly = ''
 let g:syntastic_tex_checkers = ['lacheck']
 colorscheme wal

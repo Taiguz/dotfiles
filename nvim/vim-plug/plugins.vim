@@ -28,4 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "Colorscheme"
     Plug 'dylanaraps/wal.vim'
+    "Comments"
+    Plug 'tpope/vim-commentary'
     call plug#end()

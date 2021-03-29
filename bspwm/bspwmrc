@@ -12,8 +12,9 @@ fi
 . "${HOME}/.cache/wal/colors.sh"
 bspc config border_width         1
 bspc config window_gap          12
-bspc config focused_border_color "$color15"
-bspc config normal_border_color \#000000
+#bspc config focused_border_color "$color15"
+bspc config focused_border_color \#000000
+bspc config normal_border_color "$color10"
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config bottom_monocle_padding 0
@@ -35,6 +36,12 @@ feh --bg-fill ~/papers/`cat ~/.background-image`
 #configure touchpad
 ~/scripts/configure_touchpad.sh
 
+#numlock on
+numlockx &
+
+#map caps-lock to esc	
+~/scripts/caps-esc.sh
+
 #handle headphone mic
 ~/scripts/handle-mic.sh &
 
@@ -43,6 +50,9 @@ feh --bg-fill ~/papers/`cat ~/.background-image`
 
 #watch monitors
 node ~/scripts/handle-monitors.js &
+
+#watch devices
+~/scripts/watch-devices.sh &
 
 #start polybar
 ~/.config/polybar/launch.sh &
