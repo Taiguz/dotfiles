@@ -1,6 +1,6 @@
 # To spawn the terminal
 super + Return
-  notify-send 'Shortcut Feedback' 'Lauching terminal' --icon=~/.config/dunst/icons/terminal.png ; termite
+  notify-send 'Shortcut Feedback' 'Lauching terminal' --icon=~/.config/dunst/icons/terminal.png ; alacritty
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -77,7 +77,7 @@ super + ctrl + {q,r}
 
 #APP LAUNCH
 super + shift + g
-  notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; termite --exec='ranger --cmd="shell cat ~/.cache/wal/sequences"'
+  notify-send 'Shortcut Feedback' 'Lauching ranger' --icon=~/.config/dunst/icons/file-manager.png ; alacritty -e ranger --cmd="shell cat ~/.cache/wal/sequences"
 
 super + equal
  ~/scripts/raise-volume.sh ; notify-send 'Shortcut Feedback' "Volume +10%" --icon=~/.config/dunst/icons/volume.png 
@@ -137,6 +137,10 @@ super + KP_Subtract
 #BSPWM SHORTCUTS
 super + f
  ~/scripts/toogle-tiled-fullscreen.sh
+
+super + space
+ ~/scripts/toogle-tiled-floating.sh
+
 super + w
  bspc node -c
 
@@ -149,7 +153,7 @@ super + shift + {1-9}
  notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
 super + shift + l 
- bspc node -m eDP; \ 
+ bspc node -m eDP-1; \ 
  notify-send "Shorcut Feedback" "Moved window to second monitor" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
 super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
@@ -157,7 +161,7 @@ super + shift + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,
  bspc node -d $WORKSPACE; \ 
  notify-send "Shorcut Feedback" "Moved window to $WORKSPACE" --icon=~/.config/dunst/icons/moved-to-desktop.png
 
-super + {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
+super + {Delete,End,Next,Insert,Home,Prior,Print,Scroll_Lock,Pause}
  WORKSPACE={Home,Dev,Support,Terminal,Music,Chat,Sys,Info,Random}; \ 
  bspc desktop --focus $WORKSPACE
 
@@ -175,4 +179,4 @@ super + ctrl + {k,j}
  bspc node --resize top {-10,10} 0
 
 Print
- deepin-screenshot 
+ flameshot gui 

@@ -9,10 +9,12 @@ if [[ "${#m[@]}" == "2" ]];then
 else
 	~/scripts/move-to-edp
 fi
+#lauching polywal
+wal -f ~/.cache/wal/colors
 . "${HOME}/.cache/wal/colors.sh"
 bspc config border_width         1
 bspc config window_gap          12
-#bspc config focused_border_color "$color15"
+bspc config focused_border_color "$color15"
 bspc config focused_border_color \#000000
 bspc config normal_border_color "$color10"
 bspc config split_ratio          0.52
@@ -29,8 +31,6 @@ pkill picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom &
 
-#lauching polywal
-wal -R
 feh --bg-fill ~/papers/`cat ~/.background-image`
 
 #configure touchpad
@@ -41,27 +41,31 @@ numlockx &
 
 #map caps-lock to esc	
 ~/scripts/caps-esc.sh
+xmodmap -e 'keycode 77 = grave'
 
 #handle headphone mic
 ~/scripts/handle-mic.sh &
 
 #update clock 
-~/scripts/sincro-clock.sh &
+#~/scripts/sincro-clock.sh &
 
 #watch monitors
-node ~/scripts/handle-monitors.js &
+#node ~/scripts/handle-monitors.js &
 
 #watch devices
-~/scripts/watch-devices.sh &
+#~/scripts/watch-devices.sh &
 
 #start polybar
 ~/.config/polybar/launch.sh &
 
 #launch redshift
-pkill redshift
-while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
-redshift &
+#pkill redshift
+#while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
+#redshift &
 
 #setup startpage server
 node ~/projetos/tqs/main.js
 
+wmname LG3D &
+
+bspc rule -a android-studio state=floating border=off follow=on
