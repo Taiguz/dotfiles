@@ -1,0 +1,54 @@
+// Place your key bindings in this file to override the defaults
+[
+    "keyboard.dispatch": "keyCode",
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor",
+        "when": ""
+    }
+    ,{
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor",
+        "when": ""
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": ""
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.files.showOpenedFileInNewWindow",
+        "when": ""
+    },
+    {
+        "key": "ctrl+shift+alt+t",
+        "command": "i18n-ally.extract-text",
+        "when": ""
+    },
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "i18n-ally-locales-sidebar-file.focus",
+        "when": ""
+    },
+    {
+        "key": "tab",
+        "command": "selectNextQuickFix",
+        "when": "editorFocus && quickFixWidgetVisible"
+    },
+        {
+        "key": "shift+tab",
+        "command": "selectPrevQuickFix",
+        "when": "editorFocus && quickFixWidgetVisible"
+    },
+        {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+        {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    }
+]

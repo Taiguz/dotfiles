@@ -1,4 +1,22 @@
 @import "~/.cache/wal/colors-rofi-dark"
 * {
- font: "FiraMono-Regular 18";
+ font: "JetBrains Mono 16";
+ show-icons: true;
+ case-sensitive: false;
+}
+
+element {
+    padding: 2px;
+    cursor:  pointer;
+    spacing: 10px ;
+    border:  2px;
+    border-radius: 8px;
+}
+
+entry {
+    text-color:        var(normal-foreground);
+    cursor:            text;
+    spacing:           0;
+    placeholder-color: Gray;
+    placeholder:       "Type to filter...";
 }

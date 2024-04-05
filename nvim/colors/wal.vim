@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/tai/papers/purple.jpg"
+let background = "#0E061B"
+let foreground = "#cc90d6"
+let cursor     = "#cc90d6"
+
+" Colors
+let color0  = "#0E061B"
+let color1  = "#4B146C"
+let color2  = "#611475"
+let color3  = "#564460"
+let color4  = "#632596"
+let color5  = "#7B3AC3"
+let color6  = "#9C1C96"
+let color7  = "#cc90d6"
+let color8  = "#8e6495"
+let color9  = "#4B146C"
+let color10 = "#611475"
+let color11 = "#564460"
+let color12 = "#632596"
+let color13 = "#7B3AC3"
+let color14 = "#9C1C96"
+let color15 = "#cc90d6"
