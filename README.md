@@ -1,6 +1,7 @@
-# My Personal System Dot Files
-This is a repository to reproduce most of my system configuration on an Arch Linux fresh install.  
-![SystemScreenshot](https://github.com/Taiguz/dotfiles/blob/main/screenshots/screenshot.png)
+# My System Dot Files
+This is a repository to reproduce (most of) my system configuration on an Arch Linux fresh install.  
+![SystemScreenshot](https://github.com/Taiguz/dotfiles/blob/main/screenshots/screenshotV2.png)
+
 ## Necessary Packages
 Install packages from the arch repositories  
 `pacman -S --needed - < packages-list`  
