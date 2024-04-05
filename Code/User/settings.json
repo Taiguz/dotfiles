@@ -1,0 +1,218 @@
+{
+  "workbench.editor.customLabels.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "/src": "${dirname}.${extname}"
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
+  "explorer.compactFolders": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .buckconfig, .detoxrc.json, .editorconfig, .eslintrc.js, .flowconfig, .gitignore, .prettierrc, .ruby-version, .watchmanconfig, babel.config.js, Gemfile, Gemfile.lock, jsconfig.json, metro.config.js, react-native.config.js, tsconfig.json"
+  },
+  "explorer.fileNesting.enabled": true,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.labelFormat": "medium",
+  "search.searchOnType": false,
+    "terminal.integrated.gpuAcceleration": "on",
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": null,
+    "workbench.editor.focusRecentEditorAfterClose": false,
+    "keyboard.dispatch": "keyCode",
+    "vim.camelCaseMotion.enable": true,
+    "vim.useCtrlKeys": false,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/node_modules": true
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [","],
+            "after": ["A",",","<Esc>"]
+        }
+        ,{
+            "before": ["."],
+            "after": ["A",".","<Esc>"]
+        }
+        ,{
+            "before": [";"],
+            "after": ["A",";","<Esc>"]
+        }
+        ,{
+            "before": ["<C-j>"],
+            "after": ["g","j","<Esc>"]
+        }
+        ,{
+            "before": ["<C-k>"],
+            "after": ["g","k","<Esc>"]
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["k","k","k","k","k","k","k","k"]
+        },
+        {
+            "before": ["<C-y>"],
+            "after": ["k","k","k","k","k","k","k","k"]
+        },
+        
+        {
+          "before": [
+              "u"
+          ],
+          "after": [],
+          "commands": [
+              {
+                  "command": "undo"
+              }
+          ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        }
+    ],
+    "vim.foldfix": true,
+    "workbench.editor.enablePreview": false,
+    "debug.javascript.autoAttachFilter": "onlyWithFlag",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.quickSuggestionsDelay": 80,
+    "editor.tabCompletion": "off",
+    "editor.suggest.localityBonus": true,
+    "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "emmet.excludeLanguages": ["typescriptreact"] ,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.ignoreWindowsGit27Warning": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontFamily": "JetBrains Mono",
+
+  "i18n-ally.dirStructure": "auto",
+  "i18n-ally.editor.preferEditor": true,
+  "i18n-ally.extract.keyPrefix": "",
+  "i18n-ally.displayLanguage": "pt-br",
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.extract.keygenStyle": "default",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "auto",
+  "i18n-ally.extract.keygenStrategy": "empty",
+  "i18n-ally.sourceLanguage": "pt-br",
+  "i18n-ally.translate.engines": ["google-cn", "google"],
+  "i18n-ally.translate.parallels": 5,
+  "i18n-ally.translate.promptSource": false,
+  "i18n-ally.translate.overrideExisting": false,
+  "todo-tree.filtering.ignoreGitSubmodules": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "-- TODO"
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.startupEditor": "none",
+  "git.openRepositoryInParentFolders": "always",
+  "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 2,
+  "editor.lineHeight": 1.8,
+  "gitlens.mode.active": "zen",
+  "window.menuBarVisibility": "toggle",
+  "workbench.statusBar.visible": false,
+
+  // Templates
+  "module-templates.engine": "handlebars",
+  "module-templates.templates": {
+    "react-component": {
+      "displayName": "Basic React Function component",
+      "defaultPath": "src/components",
+      "questions": {
+        "name": "Insert the component name",
+      },
+      "folder": "{{name}}",
+      "files": [
+        {
+          "name": "index.tsx",
+          "content": [
+            "",
+            "const {{name}}: React.FC = () => {",
+            " return (",
+            "   <div>",
+            "        ",
+            "   </div>",
+            " )",
+            "}",
+            "export default {{name}};"
+          ]
+        },
+      ]
+    },
+    "react-page-component": {
+      "displayName": "Basic Page Component",
+      "defaultPath": "src/pages",
+      "questions": {
+        "name": "Insert the page name",
+      },
+      "folder": "{{name}}",
+      "files": [
+        {
+          "name": "index.tsx",
+          "content": [
+            "",
+            "const {{name}}: React.FC = () => {",
+            " return (",
+            "   <div className=\"container px-4 bg-primary text-foreground border-2 border-slate\">",
+            "     <p>{{name}}</p>",
+            "   </div>",
+            " )",
+            "}",
+            "export default {{name}};"
+          ]
+        },
+      ]
+    }
+  },
+  "editor.fontSize": 16
+}

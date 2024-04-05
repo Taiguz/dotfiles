@@ -1,5 +1,5 @@
 [global]
-font=Ubuntu 12
+font=JetBrains Mono 12
 allow_markup=yes
 format="<b>%s</b>\n%b"
 sort=yes
@@ -16,7 +16,14 @@ icon_position=left
 min_icon_size=64
 max_icon_size=64
 icon_path=/usr/share/icons/gnome/64x64/status/:/usr/share/icons/gnome/64x64/devices/
-geometry="300x50-12+10"
+geometry="300x50-100+100"
+
+width=300
+height=(100, 180)
+origin=top-right
+offset= 10x10
+frame_width=0
+
 transparency=0
 idle_threshold=999
 monitor=0
@@ -28,7 +35,7 @@ horizontal_padding=20
 separator_color=auto
 startup_notification=false
 verbosity=mesg
-corner_radius=0
+corner_radius=8
 dmenu=/usr/bin/dmenu -p dunst:
 browser=google-chrome
 
@@ -37,7 +44,7 @@ per_monitor_dpi=false
 
 [frame]
 width=0
-color="#FFFFFF"
+color="#4B146C"
 
 [shortcuts]
 close=ctrl+space
@@ -46,18 +53,18 @@ history=ctrl+grave
 context=ctrl+shift+period
 
 [urgency_low]
-background="#dc2566"
-foreground="#272822"
+background="#4B146C"
+foreground="#D7B2FF"
 timeout=3
 
 [urgency_normal]
-background="#dc2566"
-foreground="#272822"
+background="#4B146C"
+foreground="#D7B2FF"
 timeout=4
 
 [urgency_critical]
-background="#dc2566"
-foreground="#272822"
+background="#4B146C"
+foreground="#D7B2FF"
 timeout=5
 summary="*"
 script=dunst_espeak.sh

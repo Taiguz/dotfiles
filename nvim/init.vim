@@ -25,7 +25,7 @@ autocmd FileType c setlocal foldmethod=indent
 autocmd FileType sh setlocal tabstop=1
 set foldtext=TaiguzFoldText()
 set fillchars=fold:\ 
-set foldcolumn=2
+set foldcolumn=0
 let g:loaded_matchparen=1
 set clipboard+=unnamedplus 
 packadd vimball
@@ -50,3 +50,14 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.readonly = ''
 let g:syntastic_tex_checkers = ['lacheck']
 colorscheme wal
+    " " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
