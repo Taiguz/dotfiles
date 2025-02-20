@@ -22,7 +22,7 @@ super + shift + v
  #notify-send 'Shortcut Feedback' 'Opening Home Page' --icon=~/.config/dunst/icons/web-browser.png ; firefox http://localhost:44406
 
 super + shift + f
- notify-send 'Shortcut Feedback' 'Lauching firefox' --icon=~/.config/dunst/icons/web-browser.png ; firefox
+ notify-send 'Shortcut Feedback' 'Lauching Zen' --icon=~/.config/dunst/icons/web-browser.png ; zen-browser
 #CALENDAR
 super + shift + r
  termite --exec=R
@@ -86,11 +86,11 @@ super + ctrl + {q,r}
 
 #APP LAUNCH
 #super + shift + g
-  #notify-send 'Shortcut Feedback' 'Lauching Nautilus' --icon=~/.config/dunst/icons/file-manager.png ; alacritty -e ranger --cmd="shell cat ~/.cache/wal/sequences"
+  #notify-send 'Shortcut Feedback' 'Lauching Dolphin' --icon=~/.config/dunst/icons/file-manager.png ; alacritty -e ranger --cmd="shell cat ~/.cache/wal/sequences"
 
 #APP LAUNCH
 super + shift + g
-  notify-send 'Shortcut Feedback' 'Lauching Nautilus' --icon=~/.config/dunst/icons/file-manager.png ; nautilus
+  notify-send 'Shortcut Feedback' 'Lauching Nemo' --icon=~/.config/dunst/icons/file-manager.png ; nemo
 
 super + equal
  ~/scripts/raise-volume.sh ; notify-send 'Shortcut Feedback' "Volume +10%" --icon=~/.config/dunst/icons/volume.png 
@@ -103,6 +103,12 @@ super + KP_Add
 
 super + KP_Subtract
  ~/scripts/decrease-volume.sh ; notify-send 'Shortcut Feedback' "Volume -10%" --icon=~/.config/dunst/icons/volume.png 
+
+super + ctrl + button1
+  notify-send "back" && xdotool click 8
+
+super + ctrl + button3
+  notify-send "forward" && xdotool click 9
 
 #NAUTILUS
 #super + shift + n
@@ -222,3 +228,6 @@ XF86AudioPrev
 
 XF86AudioPlay
  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+super + button2
+  xdotool key XF86Back

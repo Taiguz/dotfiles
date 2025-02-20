@@ -28,7 +28,7 @@ set fillchars=fold:\
 set foldcolumn=0
 let g:loaded_matchparen=1
 set clipboard+=unnamedplus 
-packadd vimball
+""packadd vimball
 source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/maps.vim
 let g:airline_extensions = ['branch', 'tabline']
@@ -61,3 +61,9 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr guifg=#FFFFFF
