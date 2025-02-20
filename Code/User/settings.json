@@ -1,9 +1,15 @@
 {
+  "editor.snippetSuggestions": "bottom",
   "workbench.editor.customLabels.enabled": true,
   "workbench.editor.customLabels.patterns": {
-    "/src": "${dirname}.${extname}"
+    "**": "${filename}.${extname}"
   },
-  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.editor.enablePreviewFromCodeNavigation": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  //"workbench.editor.customLabels.patterns": {
+    //"**": "${dirname}.${extname}"
+  //},
+  "editor.cursorSmoothCaretAnimation": "off",
   "explorer.compactFolders": false,
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
@@ -18,31 +24,39 @@
   },
   "explorer.fileNesting.enabled": true,
   "breadcrumbs.enabled": false,
-  "workbench.editor.labelFormat": "medium",
+  "workbench.editor.labelFormat": "default",
   "search.searchOnType": false,
-    "terminal.integrated.gpuAcceleration": "on",
-    "editor.formatOnSaveMode": "modifications",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": null,
-    "workbench.editor.focusRecentEditorAfterClose": false,
-    "keyboard.dispatch": "keyCode",
-    "vim.camelCaseMotion.enable": true,
-    "vim.useCtrlKeys": false,
-    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "**/Thumbs.db": true,
-      "**/node_modules": true
-    },
+  "terminal.integrated.gpuAcceleration": "on",
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.removeUnusedImports": "never"
+  },
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "keyboard.dispatch": "keyCode",
+  "vim.camelCaseMotion.enable": true,
+  "vim.useCtrlKeys": false,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.realm": true,
+    "**/*.realm.backup-log": true,
+    "**/*.realm.lock": true,
+    "**/*.realm.management": true,
+    "**/*.realm.note": true,
+    "**/CVS": true,
+    "**/node_modules": true,
+    "**/Thumbs.db": true
+  },
     "vim.normalModeKeyBindings": [
         {
             "before": [","],
             "after": ["A",",","<Esc>"]
-        }
-        ,{
+        },
+        {
             "before": ["."],
             "after": ["A",".","<Esc>"]
         }
@@ -53,10 +67,6 @@
         ,{
             "before": ["<C-j>"],
             "after": ["g","j","<Esc>"]
-        }
-        ,{
-            "before": ["<C-k>"],
-            "after": ["g","k","<Esc>"]
         },
         {
             "before": ["<C-u>"],
@@ -90,33 +100,25 @@
             ]
         }
     ],
-    "vim.foldfix": true,
-    "workbench.editor.enablePreview": false,
-    "debug.javascript.autoAttachFilter": "onlyWithFlag",
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": false,
-        "strings": false
-    },
-    "editor.quickSuggestionsDelay": 80,
-    "editor.tabCompletion": "off",
-    "editor.suggest.localityBonus": true,
-    "[json]": {
+  "vim.foldfix": true,
+  "workbench.editor.enablePreview": false,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+  },
+  "editor.quickSuggestionsDelay": 80,
+  "editor.tabCompletion": "off",
+  "editor.suggest.localityBonus": true,
+  "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "emmet.excludeLanguages": ["typescriptreact"] ,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "git.ignoreWindowsGit27Warning": true,
+  "typescript.format.semicolons": "remove",
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -131,7 +133,7 @@
   "i18n-ally.extract.autoDetect": true,
   "i18n-ally.extract.keygenStyle": "default",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": "auto",
+  "i18n-ally.localesPaths": "./src/localization/",
   "i18n-ally.extract.keygenStrategy": "empty",
   "i18n-ally.sourceLanguage": "pt-br",
   "i18n-ally.translate.engines": ["google-cn", "google"],
@@ -159,8 +161,6 @@
   "window.zoomLevel": 2,
   "editor.lineHeight": 1.8,
   "gitlens.mode.active": "zen",
-  "window.menuBarVisibility": "toggle",
-  "workbench.statusBar.visible": false,
 
   // Templates
   "module-templates.engine": "handlebars",
@@ -200,12 +200,13 @@
         {
           "name": "index.tsx",
           "content": [
+            "import Container from '@/Container'",
             "",
             "const {{name}}: React.FC = () => {",
             " return (",
-            "   <div className=\"container px-4 bg-primary text-foreground border-2 border-slate\">",
-            "     <p>{{name}}</p>",
-            "   </div>",
+            "   <Container>",
+            "     <h1>{{name}}</h1>",
+            "   </Container>",
             " )",
             "}",
             "export default {{name}};"
@@ -214,5 +215,34 @@
       ]
     }
   },
-  "editor.fontSize": 16
+  "editor.fontSize": 16,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "files.watcherExclude": {
+    "**/*.realm.backup-log": true,
+    "**/*.realm.note": true
+  },
+  "search.exclude": {
+    "**/android/.gradle": true,
+    "**/android/app/.cxx": true,
+    "**/android/app/build": true,
+    "**/ios": true
+  },
+  "editor.lineNumbers": "on",
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.guides.indentation": false,
+  "editor.lineDecorationsWidth": 10,
+  "editor.lightbulb.enabled": "off",
+  "editor.renderWhitespace": "none",
+  "editor.showFoldingControls": "always",
+  "workbench.sideBar.location": "left",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.mouseWheelScrollSensitivity": 5,
+  "javascript.format.semicolons": "remove",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "continue.telemetryEnabled": false,
+  "window.menuBarVisibility": "toggle",
 }

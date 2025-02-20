@@ -5,8 +5,8 @@
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditor",
         "when": ""
-    }
-    ,{
+    },
+    {
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor",
         "when": ""
@@ -36,19 +36,39 @@
         "command": "selectNextQuickFix",
         "when": "editorFocus && quickFixWidgetVisible"
     },
-        {
+    {
         "key": "shift+tab",
         "command": "selectPrevQuickFix",
         "when": "editorFocus && quickFixWidgetVisible"
     },
-        {
+    {
         "key": "tab",
-        "command": "selectNextSuggestion",
+        "command": "acceptSelectedSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
     },
-        {
-        "key": "shift+tab",
+    {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+k",
         "command": "selectPrevSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    }
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+      },
+      {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+      }
 ]

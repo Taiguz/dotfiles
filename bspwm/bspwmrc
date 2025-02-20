@@ -1,4 +1,17 @@
 #! /bin/bash
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export ANDROID_HOME=/home/tai/opt/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/home/tai/opt/android-studio/bin
+export _JAVA_AWT_WM_NONREPARENTING=1
+export GTK_THEME=Adwaita:dark
+export VISUAL=vim
+export EDITOR="$VISUAL"
+source ~/.cache/wal/colors-tty.sh
+
 sxhkd &
 
 setxkbmap -layout br
@@ -68,8 +81,6 @@ xmodmap -e 'keycode 9 = apostrophe quotedbl apostrophe quotedbl'
 #while pgrep -u $UID -x redshift >/dev/null; do sleep 1; done
 #redshift &
 
-#setup startpage server
-#node ~/projetos/tqs/main.js
 
 wmname LG3D &
 
@@ -77,4 +88,8 @@ bspc rule -a android-studio state=floating border=off follow=on
 bspc rule -a "Realm Studio" state=floating center=on follow=on
 bspc rule -a "realm studio" state=floating center=on follow=on
 bspc rule -a Alacritty state=floating center=on follow=on
+bspc rule -a Nemo state=floating center=on follow=on
 bspc rule -a feh state=floating 
+
+#setup startpage server
+node ~/projetos/tqs/main.js &
