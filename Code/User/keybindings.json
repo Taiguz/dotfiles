@@ -2,6 +2,11 @@
 [
     "keyboard.dispatch": "keyCode",
     {
+        "key": "tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "textInputFocus && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditor",
         "when": ""
@@ -65,10 +70,30 @@
         "key": "alt+j",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
-      },
-      {
+    },
+    {
         "key": "alt+k",
         "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "inQuickOpen"
-      }
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
 ]

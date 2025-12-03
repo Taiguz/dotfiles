@@ -1,4 +1,5 @@
 {
+  //"typescript.experimental.useTsgo": true,
   "editor.snippetSuggestions": "bottom",
   "workbench.editor.customLabels.enabled": true,
   "workbench.editor.customLabels.patterns": {
@@ -65,18 +66,13 @@
             "after": ["A",";","<Esc>"]
         }
         ,{
-            "before": ["<C-j>"],
+            "before": ["<S-j>"],
             "after": ["g","j","<Esc>"]
         },
         {
-            "before": ["<C-u>"],
-            "after": ["k","k","k","k","k","k","k","k"]
+            "before": ["<S-k>"],
+            "after": ["g","k","<Esc>"]
         },
-        {
-            "before": ["<C-y>"],
-            "after": ["k","k","k","k","k","k","k","k"]
-        },
-        
         {
           "before": [
               "u"
@@ -101,7 +97,6 @@
         }
     ],
   "vim.foldfix": true,
-  "workbench.editor.enablePreview": false,
   "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "editor.quickSuggestions": {
       "other": true,
@@ -118,6 +113,7 @@
   "git.ignoreWindowsGit27Warning": true,
   "typescript.format.semicolons": "remove",
   "[typescriptreact]": {
+    "editor.snippetSuggestions": "bottom",
     "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[jsonc]": {
@@ -216,7 +212,6 @@
     }
   },
   "editor.fontSize": 16,
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "files.watcherExclude": {
     "**/*.realm.backup-log": true,
     "**/*.realm.note": true
@@ -245,4 +240,20 @@
   },
   "continue.telemetryEnabled": false,
   "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "yaml.schemas": {
+    "/home/tai/.vscode/extensions/continue.continue-1.0.10-linux-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine",
+  "C_Cpp.vcFormat.space.withinLambdaBrackets": true,
+  "C_Cpp.vcFormat.indent.lambdaBracesWhenParameter": false,
+  "diffviewer.outputFormat": "line-by-line",
+  "workbench.editor.enablePreview": false,
+  "editor.largeFileOptimizations": false,
 }
